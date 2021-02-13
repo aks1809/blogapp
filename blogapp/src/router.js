@@ -8,9 +8,8 @@ import {
 } from "react-router-dom";
 import authActions from "./redux/auth/actions";
 import Dashboard from "./containers/Dashboard/Dashboard";
-import Header from "./containers/Header/Header";
-import Categories from "./containers/Categories/Categories";
-import Loader from "./containers/Loader/Loader";
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const { login } = authActions;
 
@@ -53,7 +52,20 @@ const Routes = () => {
   };
 
   return (
-    <Suspense fallback={<Loader />}>
+    <Suspense
+      fallback={
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
+          }}
+        >
+          <Loader type="Puff" color="#00BFFF" height={100} width={100} />
+        </div>
+      }
+    >
       <Router>
         <Switch>
           {publicRoutes.map((route, index) => (
