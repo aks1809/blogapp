@@ -1,0 +1,58 @@
+.cover-div {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cover-div::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 150px 100px 150px #000000, inset -150px -100px 150px #000000;
+  z-index: 1;
+}
+.sign-in {
+  z-index: 2;
+  background: gray;
+  height: 350px;
+  width: 400px;
+}
+.signin-heading {
+  background: white;
+  width: 100%;
+  text-align: center;
+}
+.signin-heading > img {
+  width: 200px;
+}
+.signin-form {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 25px;
+  width: 200px;
+  border-radius: 3px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.login-btn > .logo {
+  font-size: 20px;
+  display: flex;
+}
+@media (max-width: 500px) {
+  .sign-in {
+    width: 250px;
+  }
+}
